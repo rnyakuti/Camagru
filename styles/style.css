@@ -12,6 +12,7 @@ background-image: url("https://cdn.pixabay.com/photo/2020/03/16/08/38/lake-49362
   line-height: 1.5;
   color: #333;
   min-height: 100%;
+  background-color: #000000 !important;
   position: relative;
 }
 
@@ -128,6 +129,7 @@ a:hover {
 }
 
 .login input[type="email"],
+.login input[type="text"],
 .login input[type="password"],
 .login input:focus {
   background-color: rgba(40, 52, 67, 0.75);
