@@ -17,34 +17,33 @@
 			</div>
 			<div class="welcome"><strong>Welcome,</strong> Enter in your details to register</div>
 
-			<form class="form-horizontal login-form">
+			<form class="form-horizontal login-form" action="functions\Register.php" method="post">
 				<div class="form-group relative">
-					<input id="login_username" class="form-control input-lg" type="text" placeholder="Fullname" required>
+					<input name="fullname" class="form-control input-lg" type="text" placeholder="Fullname" required >
 					<i class="fa fa-user"><img src="https://image.flaticon.com/icons/svg/942/942743.svg" alt="fish" style="margin-top:-9px; opacity:0.5" width="30" height="30"></i>
 				</div>
 				<div class="form-group relative">
-					<input id="login_username" class="form-control input-lg" type="text" placeholder="Username" required>
+					<input name="username" class="form-control input-lg" type="text" placeholder="Username" required>
 					<i class="fa fa-user"><img src="https://image.flaticon.com/icons/svg/898/898118.svg" alt="fish" style="margin-top:-9px; opacity:0.5" width="30" height="30"></i>
 				</div>
 				<div class="form-group relative">
-					<input id="login_username" class="form-control input-lg" type="email" placeholder="email address" required>
+					<input name="email" class="form-control input-lg" type="email" placeholder="email address" required>
 					<i class="fa fa-user"><img src="https://image.flaticon.com/icons/svg/916/916938.svg" alt="fish" style="margin-top:-9px; opacity:0.5" width="30" height="30"></i>
 				</div>
 				<div class="form-group relative password">
-					<input id="login_password" class="form-control input-lg" type="password" placeholder="Password" required>
+					<input name="password" class="form-control input-lg" type="password" placeholder="Password" required>
 					<i class="fa fa-lock"><img src="https://image.flaticon.com/icons/svg/165/165002.svg" alt="fish" style="margin-top:-9px; opacity:0.5" width="30" height="30"></i>
 				</div>
 				<div class="form-group relative password">
-					<input id="login_password" class="form-control input-lg" type="password" placeholder="Confirm password" required>
+					<input name="regconfirm_password" class="form-control input-lg" type="password" placeholder="Confirm password" required>
 					<i class="fa fa-lock"><img src="https://image.flaticon.com/icons/svg/165/165002.svg" alt="fish" style="margin-top:-9px; opacity:0.5" width="30" height="30"></i>
 				</div>
 			  <div class="form-group">
-			    <button type="submit" class="btn btn-success btn-lg btn-block">Register</button>
+			    <button name="set_reg" type="submit" class="btn btn-success btn-lg btn-block">Register</button>
 			  </div>
 			</form>
 		</div>
 	</div>
-
   </body>
 </body>
 </html>

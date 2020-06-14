@@ -1,3 +1,8 @@
+<?php
+// Start the session
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en" >
 <head>
@@ -19,7 +24,7 @@
 
 			<form class="form-horizontal login-form" action="validate_login.php" id="#form" method="post" >
 				<div class="form-group relative">
-					<input id="login_username" class="form-control input-lg" type="text" placeholder="Username" required>
+					<input name="username" class="form-control input-lg" type="text" placeholder="Username" required>
 					<i class="fa fa-user"><img src="https://image.flaticon.com/icons/svg/898/898118.svg" alt="fish" style="margin-top:-9px; opacity:0.5" width="30" height="30"></i>
 				</div>
 				<div class="form-group relative password">
@@ -45,3 +50,4 @@
   </body>
 </body>
 </html>
+

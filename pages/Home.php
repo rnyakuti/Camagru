@@ -1,3 +1,25 @@
+<?php
+// Start the session
+session_start();
+?>
+
+<?php
+/* Attempt MySQL server connection. Assuming you are running MySQL*/
+$link = mysqli_connect("localhost", "root", "root", "Camagru_rnyakuti");
+ 
+// Check connection
+if($link === false){
+    die("ERROR: Could not connect. " . mysqli_connect_error());
+}
+ 
+// Escape user inputs for security
+$fullname = mysqli_real_escape_string($link, $_REQUEST['fullname']);
+$username = mysqli_real_escape_string($link, $_REQUEST['username']);
+?>
+<?php
+// Start the session
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en" >
 <head>
@@ -13,10 +35,10 @@
         <p style="margin: -16px 0 -3px; font-size:23px; ">camagru</p>
 			</div></a>
   <div class="header-right">
-    <a href="#home">MY PROFILE</a>
-    <a href="#contact">EXPLORE</a>
-	 <a href="#contact">SETTINGS</a>
-    <a href="#about">LOGOUT</a>
+    <a href="#home" style=" font-size:1.2em">MY PROFILE</a>
+    <a href="#contact" style=" font-size:1.2em">EXPLORE</a>
+	 <a href="#contact" style=" font-size:1.2em">SETTINGS</a>
+    <a href="#about" style=" font-size:1.2em">LOGOUT</a>
 	
   </div>
 </div>
@@ -35,9 +57,11 @@
 
 			<div class="profile-user-settings">
 
-				<h1 class="profile-user-name">username placeholder</h1>
+				<h3 style =  "font-size: 1.5em; margin-bottom: 10px;"> <?php
+  					$u = $_SESSION['username'] ;
+				?> <?=  "{$u}"?></h3>
 
-				<button class="btn profile-edit-btn">Upload</button>
+				<button class="btn profile-edit-btn" style="margin-bottom:10px; margin-left:-5px;">Upload</button>
 
 			</div>
 
@@ -129,4 +153,4 @@
 
 </body>
 </head>
-</html>
+</html> 
