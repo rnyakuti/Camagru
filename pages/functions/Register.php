@@ -5,7 +5,7 @@ session_start();
 
 <?php
 /* Attempt MySQL server connection. Assuming you are running MySQL*/
-$link = mysqli_connect("localhost", "root", "root", "Camagru_rnyakuti");
+$link = mysqli_connect("localhost", "root", "", "Camagru_rnyakuti");
  
 // Check connection
 if($link === false){
@@ -32,6 +32,13 @@ if(mysqli_query($link, $sql)){
  
 // Close connection
 mysqli_close($link);
+$msg = "First line of text\nSecond line of text";
+
+// use wordwrap() if lines are longer than 70 characters
+$msg = wordwrap($msg,70);
+
+// send email
+mail("charmaine.nyakutira@gmail.com","My subject",$msg);
 ?>
 
 <?= '<h4 class= "text-center"><div class="_7UhW9   xLCgt     yUEEX    _0PwGv        uL8Hv  "><p class=" izU2O "> Dont have an account? <a href="../../index.php"><span class="_7UhW9   xLCgt       qyrsm      gtFbE     se6yk">Sign up</span></a></p></div></h4>' ?> 

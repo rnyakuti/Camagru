@@ -6,7 +6,7 @@ session_start();
 
 <?php
 /* Attempt MySQL server connection. Assuming you are running MySQL*/
-$link = mysqli_connect("localhost", "root", "root", "Camagru_rnyakuti");
+$link = mysqli_connect("localhost", "root", "", "Camagru_rnyakuti");
  
 // Check connection
 if($link === false){
