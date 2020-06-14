@@ -17,9 +17,9 @@
 			</div>
 			<div class="welcome"><strong>Forgot your password?</strong> Enter in your email and we will send you a reset password</div>
 
-			<form class="form-horizontal login-form">
+			<form class="form-horizontal login-form"  action="functions\ResetPassword.php" method="post">
 				<div class="form-group relative">
-					<input id="login_username" class="form-control input-lg" type="email" placeholder="email address" required>
+					<input name="email_reset" class="form-control input-lg" type="email" placeholder="email address" required>
 					<i class="fa fa-user"><img src="https://image.flaticon.com/icons/svg/916/916938.svg" alt="fish" style="margin-top:-9px; opacity:0.5" width="30" height="30"></i>
 				</div>
 			  <div class="form-group">

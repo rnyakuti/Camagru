@@ -28,7 +28,7 @@ session_start();
 					<i class="fa fa-user"><img src="https://image.flaticon.com/icons/svg/898/898118.svg" alt="fish" style="margin-top:-9px; opacity:0.5" width="30" height="30"></i>
 				</div>
 				<div class="form-group relative password">
-					<input id="login_password" class="form-control input-lg" type="password" placeholder="Password" required>
+					<input name="password" class="form-control input-lg" type="password" placeholder="Password" required>
 					<i class="fa fa-lock"><img src="https://image.flaticon.com/icons/svg/165/165002.svg" alt="fish" style="margin-top:-9px; opacity:0.5" width="30" height="30"></i>
 				</div>
 			  <div class="form-group">

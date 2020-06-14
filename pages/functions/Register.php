@@ -4,41 +4,36 @@ session_start();
 ?>
 
 <?php
-/* Attempt MySQL server connection. Assuming you are running MySQL*/
-$link = mysqli_connect("localhost", "root", "", "Camagru_rnyakuti");
- 
-// Check connection
-if($link === false){
-    die("ERROR: Could not connect. " . mysqli_connect_error());
+$DB_DSN = "mysql:host=localhost;dbname=Camagru_rnyakuti";
+$DB_USER = "root";
+$DB_PASSWORD = "";
+$DB_NAME = "Camagru_rnyakuti";
+
+$fullname = $_POST['fullname'];
+$username = $_POST['username'];
+$email = $_POST['email'];
+$password = $_POST['password'];
+$hash = trim(password_hash($password, PASSWORD_BCRYPT));
+$hash= trim($hash);
+
+try
+{
+    $conn = new PDO($DB_DSN, $DB_USER, $DB_PASSWORD);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $reg = "INSERT INTO users (fullname, username, email,password,verified) VALUES ('$fullname', '$username', '$email', '$hash','yes')";
+    $request = $conn->query($reg);
+
+    /**SEND CONFIRMATION MESSAGE */
+    $subject = "Camagru Registration Verification";
+    $message = "Your account has been verified";
+    mail($email, $subject, $message);
+    echo "Confirmation email sent to ".$email."<br>";
 }
- 
-// Escape user inputs for security
-$fullname = mysqli_real_escape_string($link, $_REQUEST['fullname']);
-$username = mysqli_real_escape_string($link, $_REQUEST['username']);
-$email = mysqli_real_escape_string($link, $_REQUEST['email']);
-$password = mysqli_real_escape_string($link, $_REQUEST['password']);
-$hashed_password = password_hash($password, PASSWORD_DEFAULT);
-
-echo $out ."yeet";
- 
-// Attempt insert query execution
-$sql = "INSERT INTO users (fullname, username, email,password,verified) VALUES ('$fullname', '$username', '$email', '$hashed_password ','yes')";
-if(mysqli_query($link, $sql)){
-    echo ($username . "User has been registered, Please check your email to complete verification.");
-   
-} else{
-    echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
+catch(PDOException $e)
+{
+    echo "Error: " . $e->getMessage();
 }
- 
-// Close connection
-mysqli_close($link);
-$msg = "First line of text\nSecond line of text";
-
-// use wordwrap() if lines are longer than 70 characters
-$msg = wordwrap($msg,70);
-
-// send email
-mail("charmaine.nyakutira@gmail.com","My subject",$msg);
+$conn = null;
 ?>
 
-<?= '<h4 class= "text-center"><div class="_7UhW9   xLCgt     yUEEX    _0PwGv        uL8Hv  "><p class=" izU2O "> Dont have an account? <a href="../../index.php"><span class="_7UhW9   xLCgt       qyrsm      gtFbE     se6yk">Sign up</span></a></p></div></h4>' ?> 
+<?= '<h4 class= "text-center"><div class="_7UhW9   xLCgt     yUEEX    _0PwGv        uL8Hv  "><p class=" izU2O "> A verification email has been sent to your inbox.  <a href="../../index.php"><span class="_7UhW9   xLCgt       qyrsm      gtFbE     se6yk">Go to login page</span></a></p></div></h4>' ?> 
