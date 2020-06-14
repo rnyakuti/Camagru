@@ -38,7 +38,7 @@ session_start();
     <a href="#home" style=" font-size:1.2em">MY PROFILE</a>
     <a href="#contact" style=" font-size:1.2em">EXPLORE</a>
 	 <a href="#contact" style=" font-size:1.2em">SETTINGS</a>
-    <a href="#about" style=" font-size:1.2em">LOGOUT</a>
+    <a href="functions/logOut.php" style=" font-size:1.2em">LOGOUT</a>
 	
   </div>
 </div>
