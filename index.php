@@ -45,6 +45,9 @@ session_start();
     <h4 class="text-center">
       <div class="_7UhW9   xLCgt     yUEEX    _0PwGv        uL8Hv         "><p class="izU2O ">Don't have an account? <a href="pages/signUpPage.php"><span class="_7UhW9   xLCgt       qyrsm      gtFbE     se6yk        ">Sign up</span></a></p></div>
     </h4>
+	<h4 class="text-center">
+      <div class="_7UhW9   xLCgt     yUEEX    _0PwGv        uL8Hv         "><p class="izU2O ">Don't want to login? <a href="pages/PhotoGalleryPage.php"><span class="_7UhW9   xLCgt       qyrsm      gtFbE     se6yk        ">view photo gallery</span></a></p></div>
+    </h4>
 	</div>
 
   </body>

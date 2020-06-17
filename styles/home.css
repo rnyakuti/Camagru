@@ -79,6 +79,7 @@
       max-width: 93.5rem;
       margin: 0 auto;
       padding: 0 2rem;
+      min-height: 100vh !important;
   }
   
   .btn {
@@ -105,9 +106,9 @@
   
   
   .footer {
-     position: inherit;
-     left: 0;
-     margin-bottom: -100px;
+    position: absolute !important;
+    bottom: 0 !important;
+     margin-bottom: -100px !important;
      width: 100%;
      background-color: #FA8072;
      color: white;

@@ -29,24 +29,32 @@ try
              $id = $new['user_id'];
         }
     }
-    if ($ver == 'yes')
+    if(isset($ver))
     {
-       if (password_verify($password_1, $pw) == TRUE)
-       {
-            $_SESSION['username'] = $username;
-            $_SESSION['logged_in'] = "yes";
-            $_SESSION['id'] = $id;
-            header("Location: pages/Home.php");
+        if ($ver == 'yes')
+        {
+            if (password_verify($password_1, $pw) == TRUE)
+            {
+                 $_SESSION['username'] = $username;
+                 $_SESSION['logged_in'] = "yes";
+                 $_SESSION['id'] = $id;
+                 header("Location: pages/Home.php");
+             }
+            else
+            {
+                echo "username or password invalid. check your details or register if you dont have an accout";
+            }
         }
         else
         {
-            echo "username or password invalid. check your details or register if you dont have an accout";
+            echo "It seems as though you are not a verified user, please check your inbox to complete account verification";
         }
     }
     else
-    {
-        echo "It seems as though you are not a verified user, please check your inbox to complete account verification";
+    { 
+        echo "username or password invalid. check your details or register if you dont have an account";
     }
+
 }
 catch (PDOException $e)
 {
@@ -56,5 +64,4 @@ catch (PDOException $e)
  $conn = null;
 ?>
 
-
-?>
+<?= '<a href="index.php"><span class="_7UhW9   xLCgt       qyrsm      gtFbE     se6yk">Go to login page</span></a>' ?> 
