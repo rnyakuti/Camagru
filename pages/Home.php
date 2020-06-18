@@ -24,7 +24,7 @@ session_start();
   </div>
 </div>
 
-	<div class="container">
+	<div class="container" style="min-height:100vh;">
 
 		<div class="profile">
 
@@ -82,6 +82,31 @@ session_start();
 
 	 </div>
 	 
+
+
+	 <div class="gallery-item" tabindex="0">
+
+		 <img src="https://cdn.pixabay.com/photo/2018/03/17/10/21/dolphin-3233579_1280.jpg?w=152&h=152&fit=crop&crop=faces" class="gallery-image" alt="">
+
+		 <div class="gallery-item-info">
+
+			 <ul>
+				 <li class="gallery-item-likes"><span class="visually-hidden">Likes:</span><i class="fas fa-heart" aria-hidden="true"></i> 56</li>
+				 <li class="gallery-item-comments"><span class="visually-hidden">Comments:</span><i class="fas fa-comment" aria-hidden="true"></i> 2</li>
+			 </ul>
+
+		 </div>
+ 		<div class="gallery-item-info">
+
+			 <ul>
+				 <li class="gallery-item-likes"><span class="visually-hidden">Likes:</span><i class="fas fa-heart" aria-hidden="true"></i> 56</li>
+				 <li class="gallery-item-comments"><span class="visually-hidden">Comments:</span><i class="fas fa-comment" aria-hidden="true"></i> 2</li>
+			 </ul>
+
+		 </div>
+
+	 </div>
+
 		 <div class="gallery-item" tabindex="0">
 
 		 <img src="https://cdn.pixabay.com/photo/2014/02/24/08/28/huskies-273409_1280.jpg?w=152&h=152&fit=crop&crop=faces" class="gallery-image" alt="">

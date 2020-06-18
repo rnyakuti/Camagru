@@ -25,9 +25,7 @@ session_start();
   </div>
 </div>
 
-<header>
-
-	<div class="container">
+	<div class="container" style="min-height:100vh;">
 
 		<div class="profile">
 
@@ -54,25 +52,9 @@ session_start();
 			</div>
 
 		</div>
-		<!-- End of profile section -->
-
 	</div>
-	<!-- End of container -->
-
-</header>
-
-<main>
-
-<div class="container" style="min-height: 100vh;">
-
-
-
-	</div>
-	<!-- End of container -->
-
-</main>
- <div class="footer">
-  <p style="margin-top:50px; font-size: 15px;padding-top:30px;">rnyakuti &copy; </p>
+<div style="background-color: #FA8072; color: white; text-align: center;margin-bottom:-30px;height:80px; bottom:0;width:100%;" >
+  <p style=" font-size: 15px;padding-top:30px;">rnyakuti &copy; </p>
 </div>
 
 </body>
