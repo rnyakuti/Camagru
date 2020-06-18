@@ -4,7 +4,6 @@ session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en" >
-<head>
   <meta charset="UTF-8">
   <title>camagru [rnyakuti]</title>
   <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
@@ -17,15 +16,13 @@ session_start();
         <p style="margin: -16px 0 -3px; font-size:23px; ">camagru</p>
 			</div></a>
   <div class="header-right">
-    <a href="#home" style=" font-size:1.2em">MY PROFILE</a>
-    <a href="#contact" style=" font-size:1.2em">EXPLORE</a>
+    <a href="Home.php" style=" font-size:1.2em">MY PROFILE</a>
+    <a href="PhotoGalleryPage.php" style=" font-size:1.2em">EXPLORE</a>
 	 <a href="#contact" style=" font-size:1.2em">SETTINGS</a>
     <a href="functions/logOut.php" style=" font-size:1.2em">LOGOUT</a>
 	
   </div>
 </div>
-
-<header>
 
 	<div class="container">
 
@@ -43,7 +40,7 @@ session_start();
   					$u = $_SESSION['username'] ;
 				?> <?=  "{$u}"?></h3>
 
-				<button class="btn profile-edit-btn" style="margin-bottom:10px; margin-left:-5px;">Upload</button>
+				<a class="btn profile-edit-btn" style="margin-bottom:10px; margin-left:-5px;" href="UploadPicture.php">Upload</a>
 
 			</div>
 
@@ -58,81 +55,62 @@ session_start();
 			</div>
 
 		</div>
-		<!-- End of profile section -->
+ 
+ <div class="gallery" style="margin-top:30px">
 
-	</div>
-	<!-- End of container -->
 
-</header>
+	 <div class="gallery-item" tabindex="0">
 
-<main>
+		 <img src="https://cdn.pixabay.com/photo/2018/03/17/10/21/dolphin-3233579_1280.jpg?w=152&h=152&fit=crop&crop=faces" class="gallery-image" alt="">
 
-	<div class="container">
+		 <div class="gallery-item-info">
 
-		<div class="gallery">
+			 <ul>
+				 <li class="gallery-item-likes"><span class="visually-hidden">Likes:</span><i class="fas fa-heart" aria-hidden="true"></i> 56</li>
+				 <li class="gallery-item-comments"><span class="visually-hidden">Comments:</span><i class="fas fa-comment" aria-hidden="true"></i> 2</li>
+			 </ul>
 
-			<div class="gallery-item" tabindex="0">
+		 </div>
+ 		<div class="gallery-item-info">
 
-				<img src="https://cdn.pixabay.com/photo/2018/03/17/10/21/dolphin-3233579_1280.jpg?w=152&h=152&fit=crop&crop=faces" class="gallery-image" alt="">
+			 <ul>
+				 <li class="gallery-item-likes"><span class="visually-hidden">Likes:</span><i class="fas fa-heart" aria-hidden="true"></i> 56</li>
+				 <li class="gallery-item-comments"><span class="visually-hidden">Comments:</span><i class="fas fa-comment" aria-hidden="true"></i> 2</li>
+			 </ul>
 
-				<div class="gallery-item-info">
+		 </div>
 
-					<ul>
-						<li class="gallery-item-likes"><span class="visually-hidden">Likes:</span><i class="fas fa-heart" aria-hidden="true"></i> 56</li>
-						<li class="gallery-item-comments"><span class="visually-hidden">Comments:</span><i class="fas fa-comment" aria-hidden="true"></i> 2</li>
-					</ul>
+	 </div>
+	 
+		 <div class="gallery-item" tabindex="0">
 
-				</div>
-		<div class="gallery-item-info">
+		 <img src="https://cdn.pixabay.com/photo/2014/02/24/08/28/huskies-273409_1280.jpg?w=152&h=152&fit=crop&crop=faces" class="gallery-image" alt="">
 
-					<ul>
-						<li class="gallery-item-likes"><span class="visually-hidden">Likes:</span><i class="fas fa-heart" aria-hidden="true"></i> 56</li>
-						<li class="gallery-item-comments"><span class="visually-hidden">Comments:</span><i class="fas fa-comment" aria-hidden="true"></i> 2</li>
-					</ul>
+		 <div class="gallery-item-info">
 
-				</div>
+			 <ul>
+				 <li class="gallery-item-likes"><span class="visually-hidden">Likes:</span><i class="fas fa-heart" aria-hidden="true"></i> 56</li>
+				 <li class="gallery-item-comments"><span class="visually-hidden">Comments:</span><i class="fas fa-comment" aria-hidden="true"></i> 2</li>
+			 </ul>
 
-			</div>
-			
-					<div class="gallery-item" tabindex="0">
+		 </div>
+ 			<div class="gallery-item-info">
 
-				<img src="https://cdn.pixabay.com/photo/2014/02/24/08/28/huskies-273409_1280.jpg?w=152&h=152&fit=crop&crop=faces" class="gallery-image" alt="">
+			 <ul>
+				 <li class="gallery-item-likes"><span class="visually-hidden">Likes:</span><i class="fas fa-heart" aria-hidden="true"></i> 56</li>
+				 <li class="gallery-item-comments"><span class="visually-hidden">Comments:</span><i class="fas fa-comment" aria-hidden="true"></i> 2</li>
+			 </ul>
 
-				<div class="gallery-item-info">
+		 </div>
 
-					<ul>
-						<li class="gallery-item-likes"><span class="visually-hidden">Likes:</span><i class="fas fa-heart" aria-hidden="true"></i> 56</li>
-						<li class="gallery-item-comments"><span class="visually-hidden">Comments:</span><i class="fas fa-comment" aria-hidden="true"></i> 2</li>
-					</ul>
+	 </div>
 
-				</div>
-		<div class="gallery-item-info">
 
-					<ul>
-						<li class="gallery-item-likes"><span class="visually-hidden">Likes:</span><i class="fas fa-heart" aria-hidden="true"></i> 56</li>
-						<li class="gallery-item-comments"><span class="visually-hidden">Comments:</span><i class="fas fa-comment" aria-hidden="true"></i> 2</li>
-					</ul>
-
-				</div>
-
-			</div>
-			
-
-			
-		
-			
-		
-
-		</div>
-
-	</div>
-	<!-- End of container -->
-
-</main>
- <div class="footer">
-  <p style="margin-top:50px; font-size: 15px;padding-top:30px;">rnyakuti &copy; </p>
 </div>
+	</div>
 
+ <div style="background-color: #FA8072; color: white; text-align: center;margin-bottom:-30px;height:80px; bottom:0;width:100%;" >
+  <p style=" font-size: 15px;padding-top:30px;">rnyakuti &copy; </p>
+</div>
 </body>
-</head>
 </html> 

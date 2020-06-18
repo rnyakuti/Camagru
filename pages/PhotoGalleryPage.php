@@ -70,8 +70,9 @@
 			</div>
 		</div>
 	</div>
- <div class="footer">
-  <p style="margin-top:50px; font-size: 15px;padding-top:30px;">rnyakuti &copy; </p>
-</div>
+
+	<div style="background-color: #FA8072; color: white; text-align: center;margin-bottom:-30px;height:80px; bottom:0;width:100%;" >
+  		<p style=" font-size: 15px;padding-top:30px;">rnyakuti &copy; </p>
+	</div>
 </body>
 </html> 

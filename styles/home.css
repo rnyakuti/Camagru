@@ -79,7 +79,8 @@
       max-width: 93.5rem;
       margin: 0 auto;
       padding: 0 2rem;
-      min-height: 100vh !important;
+      margin-bottom: 820px;
+      background-color: red;
   }
   
   .btn {
@@ -113,7 +114,7 @@
      background-color: #FA8072;
      color: white;
      text-align: center;
-     height: 80px;
+     height: 100px;
   }
   
   /* Profile Section */
