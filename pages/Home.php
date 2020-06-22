@@ -18,7 +18,7 @@ session_start();
   <div class="header-right">
     <a href="Home.php" style=" font-size:1.2em">MY PROFILE</a>
     <a href="PhotoGalleryPage.php" style=" font-size:1.2em">EXPLORE</a>
-	 <a href="#contact" style=" font-size:1.2em">SETTINGS</a>
+	 <a href="Settings.php" style=" font-size:1.2em">SETTINGS</a>
     <a href="functions/logOut.php" style=" font-size:1.2em">LOGOUT</a>
 	
   </div>
