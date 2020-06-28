@@ -55,13 +55,16 @@ if(isset($_POST['set_reg']))
                 //inserting user into Database
                if($variable_match == 0)
                {
-                    $reg = "INSERT INTO users (fullname, username, email,password,verified) VALUES ('$fullname', '$username', '$email', '$hash','yes')";
+                    $reg = "INSERT INTO users (fullname, username, email,password,verified,notifications) VALUES ('$fullname', '$username', '$email', '$hash','no', 'yes')";
                     $request = $conn->query($reg);
-        
+                    $uniqueLink = password_hash($email, PASSWORD_BCRYPT);
+                    $_SESSION['email'] = $email;
+                    $_SESSION['username'] = $username;
                     /**SEND CONFIRMATION MESSAGE */
-                    $subject = "Camagru Registration Verification";
-                    $message = "Your account has been verified";
-                    mail($email, $subject, $message);
+                    $subject = "Camagru Registration Verification Email";
+                    $message = "Thank you for signing up to Camagru. Please click the following link to complete your registration . http://localhost/Camagru/userverification.php?key=".$uniqueLink;
+                    $headers = "From noreply@camagru.rnyakuti.co.za";
+                    mail($email, $subject, $message,$headers);
                     echo "Confirmation email sent to ".$email."<br>";
                     echo '<h4 class= "text-center"><div class="_7UhW9   xLCgt     yUEEX    _0PwGv        uL8Hv  "><p class=" izU2O "> A verification email has been sent to your inbox.  <a href="../../index.php"><span class="_7UhW9   xLCgt       qyrsm      gtFbE     se6yk">Go to login page</span></a></p></div></h4>';
                }

@@ -34,7 +34,7 @@ try
     $users = "CREATE TABLE IF NOT EXISTS users(
         user_id INT(100) UNSIGNED AUTO_INCREMENT PRIMARY KEY NOT NULL, 
         fullname TEXT NOT NULL, username TEXT NOT NULL,
-        email TEXT NOT NULL, password TEXT NOT NULL, verified TEXT NOT NULL)";
+        email TEXT NOT NULL, password TEXT NOT NULL, verified TEXT NOT NULL, notifications TEXT NOT NULL)";
     $conn->exec($users);
     echo "[INFO]Users Table created successfully <br>";
 }
