@@ -12,7 +12,7 @@ session_start();
 <body>
 <div class="header">
   <a href="#default" class="logo"><div class="logos">
-				<img src="https://image.flaticon.com/icons/svg/3069/3069185.svg" alt="fish" style="margin-top:-25px; background-position: center;  background-repeat: no-repeat; " width="100" height="50">
+				<img src="../images/3069185.svg" alt="fish" style="margin-top:-25px; background-position: center;  background-repeat: no-repeat; " width="100" height="50">
         <p style="margin: -16px 0 -3px; font-size:23px; ">camagru</p>
 			</div></a>
   <div class="header-right">

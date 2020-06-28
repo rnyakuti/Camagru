@@ -12,7 +12,7 @@
 	<div class="container">
 		<div class="login-container-wrapper clearfix" style="  margin-top: 100px !important;">
 			<div class="logo">
-				<img src="https://image.flaticon.com/icons/svg/3069/3069185.svg" alt="fish" style="margin-top:-9px;" width="80" height="80">
+				<img src="../images/3069185.svg" alt="fish" style="margin-top:-9px;" width="80" height="80">
         <p style="margin: -16px 0 -3px;">camguru</p>
 			</div>
 			<div class="welcome"><strong>Welcome,</strong> Enter in your details to register</div>
@@ -20,23 +20,23 @@
 			<form class="form-horizontal login-form" action="functions\Register.php" method="post">
 				<div class="form-group relative">
 					<input name="fullname" class="form-control input-lg" type="text" placeholder="Fullname" required/>
-					<i class="fa fa-user"><img src="https://image.flaticon.com/icons/svg/942/942743.svg" alt="fish" style="margin-top:-9px; opacity:0.5" width="30" height="30"></i>
+					<i class="fa fa-user"><img src="../images/942743.svg" alt="fish" style="margin-top:-9px; opacity:0.5" width="30" height="30"></i>
 				</div>
 				<div class="form-group relative">
 					<input name="username" class="form-control input-lg" type="text" placeholder="Username" required/>
-                <i class="fa fa-user"><img src="https://image.flaticon.com/icons/svg/898/898118.svg" alt="fish" style="margin-top:-9px; opacity:0.5" width="30" height="30"></i>
+                <i class="fa fa-user"><img src="../images/898118.svg" alt="fish" style="margin-top:-9px; opacity:0.5" width="30" height="30"></i>
 				</div>
 				<div class="form-group relative">
 					<input name="email" class="form-control input-lg" type="email" placeholder="email address" required/>
-					<i class="fa fa-user"><img src="https://image.flaticon.com/icons/svg/916/916938.svg" alt="fish" style="margin-top:-9px; opacity:0.5" width="30" height="30"></i>
+					<i class="fa fa-user"><img src="../images/916938.svg" alt="fish" style="margin-top:-9px; opacity:0.5" width="30" height="30"></i>
 				</div>
 				<div class="form-group relative password">
 					<input name="password" class="form-control input-lg" type="password" placeholder="Password" required/>
-					<i class="fa fa-lock"><img src="https://image.flaticon.com/icons/svg/165/165002.svg" alt="fish" style="margin-top:-9px; opacity:0.5" width="30" height="30"></i>
+					<i class="fa fa-lock"><img src="../images/165002.svg" alt="fish" style="margin-top:-9px; opacity:0.5" width="30" height="30"></i>
 				</div>
 				<div class="form-group relative password">
 					<input name="regconfirm_password" class="form-control input-lg" type="password" placeholder="Confirm password" required/>
-					<i class="fa fa-lock"><img src="https://image.flaticon.com/icons/svg/165/165002.svg" alt="fish" style="margin-top:-9px; opacity:0.5" width="30" height="30"></i>
+					<i class="fa fa-lock"><img src="../images/165002.svg" alt="fish" style="margin-top:-9px; opacity:0.5" width="30" height="30"></i>
 				</div>
 			  <div class="form-group">
 			    <button name="set_reg" type="submit" class="btn btn-success btn-lg btn-block">Register</button>

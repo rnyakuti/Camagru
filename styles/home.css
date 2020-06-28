@@ -434,3 +434,14 @@
           }
       }
   }
+
+
+  
+.camera {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    width: 700px;
+    margin: 0 auto;
+}

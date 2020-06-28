@@ -17,7 +17,7 @@ session_start();
 	<div class="container">
 		<div class="login-container-wrapper clearfix">
 			<div class="logo">
-				<img src="https://image.flaticon.com/icons/svg/3069/3069185.svg" alt="fish" style="margin-top:-9px;" width="80" height="80">
+				<img src="images/3069185.svg" alt="fish" style="margin-top:-9px;" width="80" height="80">
         <p style="margin: -16px 0 -3px;">camagru</p>
 			</div>
 			<div class="welcome"><strong>Welcome,</strong> please login</div>
@@ -25,11 +25,11 @@ session_start();
 			<form class="form-horizontal login-form" action="validate_login.php" id="#form" method="post" >
 				<div class="form-group relative">
 					<input name="username" class="form-control input-lg" type="text" placeholder="Username" required>
-					<i class="fa fa-user"><img src="https://image.flaticon.com/icons/svg/898/898118.svg" alt="fish" style="margin-top:-9px; opacity:0.5" width="30" height="30"></i>
+					<i class="fa fa-user"><img src="images/898118.svg" alt="fish" style="margin-top:-9px; opacity:0.5" width="30" height="30"></i>
 				</div>
 				<div class="form-group relative password">
 					<input name="password" class="form-control input-lg" type="password" placeholder="Password" required>
-					<i class="fa fa-lock"><img src="https://image.flaticon.com/icons/svg/165/165002.svg" alt="fish" style="margin-top:-9px; opacity:0.5" width="30" height="30"></i>
+					<i class="fa fa-lock"><img src="images/165002.svg" alt="fish" style="margin-top:-9px; opacity:0.5" width="30" height="30"></i>
 				</div>
 			  <div class="form-group">
 			    <button type="submit" class="btn btn-success btn-lg btn-block" name="submit" value='Submit'>Login
