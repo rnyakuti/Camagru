@@ -17,13 +17,13 @@
 			</div>
 			<div class="welcome"><strong>Forgot your password?</strong> Enter in your email and we will send you a reset password</div>
 
-			<form class="form-horizontal login-form"  action="functions\ResetPassword.php" method="post">
+			<form class="form-horizontal login-form"  action="forgotPasswordPage.php" method="post">
 				<div class="form-group relative">
 					<input name="email_reset" class="form-control input-lg" type="email" placeholder="email address" required>
 					<i class="fa fa-user"><img src="../images/916938.svg" alt="fish" style="margin-top:-9px; opacity:0.5" width="30" height="30"></i>
 				</div>
 			  <div class="form-group">
-			    <button type="submit" class="btn btn-success btn-lg btn-block">Send Email</button>
+			    <button type="submit" name="forgot-button" class="btn btn-success btn-lg btn-block">Send Email</button>
 			  </div>
 			</form>
 		</div>
@@ -32,3 +32,22 @@
   </body>
 </body>
 </html>
+<?php 
+
+session_start();
+if(isset($_POST['forgot-button']))
+{
+	//email input validation by html
+	if(empty($_POST['email_reset']))
+	{
+		echo '<h4 class= "text-center"><div class="_7UhW9   xLCgt     yUEEX    _0PwGv        uL8Hv  "><p class=" izU2O ">Email is required to be filled in for us to send you a reset link</p></div></h4>';
+	}
+	else
+	{
+		$_SESSION['email'] = $_POST['email_reset'];
+		header("Location: functions/ResetPassword.php");
+	}
+	
+}
+
+?>
