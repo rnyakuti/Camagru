@@ -24,11 +24,10 @@
             $update = "UPDATE users SET verified='yes' WHERE user_id=$id";
             if ($conn->query($update))
             {
-                echo '<h4 class= "text-center"><div class="_7UhW9   xLCgt     yUEEX    _0PwGv        uL8Hv  "><p class=" izU2O ">Your account is now verified, you may log in and start uploading your pictures <a href="../../index.php"><span class="_7UhW9   xLCgt       qyrsm      gtFbE     se6yk">Go to login page</span></a></p></div></h4>';
+                echo '<h4 class= "text-center"><div class="_7UhW9   xLCgt     yUEEX    _0PwGv        uL8Hv  "><p class=" izU2O ">Your account is now verified, you may log in and start uploading your pictures <a href="index.php"><span class="_7UhW9   xLCgt       qyrsm      gtFbE     se6yk">Go to login page</span></a></p></div></h4>';
             }
-            session_unset();
-            session_destroy(); 
-            header("Location: index.php");
+            
+         //   header("Location: index.php");
         }
         catch (PDOException $e)
         {
