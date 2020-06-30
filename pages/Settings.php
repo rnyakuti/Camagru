@@ -23,7 +23,7 @@
 <body class="login">
 	<div class="container">
 		<div class="login-container-wrapper clearfix" style="  margin-top: 40px !important;">
-			<div class="welcome"><strong>Here you can edit your account details.</strong> Click confirm to save changes</div>
+			<div class="welcome"><strong>Here you can edit your account details.</strong> Click confirm to save changes and leave blank the details you do not want to change</div>
 
 			<form class="form-horizontal login-form" action="functions\UpdateDetails.php" method="post">
 				<div class="form-group relative">
@@ -34,8 +34,9 @@
 					<input name="email_new" class="form-control input-lg" type="email" placeholder="new email address"/>
 					<i class="fa fa-user"><img src="../images/916938.svg" alt="fish" style="margin-top:-9px; opacity:0.5" width="30" height="30"></i>
 				</div>
+				<div class="welcome"><strong>To change your password you need to provide the current one</strong></div>
 				<div class="form-group relative password">
-					<input name="password-current" class="form-control input-lg" type="password" placeholder="current password"/>
+					<input name="password_current" class="form-control input-lg" type="password" placeholder="current password"/>
 					<i class="fa fa-lock"><img src="../images/165002.svg" alt="fish" style="margin-top:-9px; opacity:0.5" width="30" height="30"></i>
 				</div>
 				<div class="form-group relative password">
@@ -46,6 +47,13 @@
 					<input name="password_newc" class="form-control input-lg" type="password" placeholder="new password confirm"/>
 					<i class="fa fa-lock"><img src="../images/165002.svg" alt="fish" style="margin-top:-9px; opacity:0.5" width="30" height="30"></i>
 				</div>
+				<div class="welcome">Receive notifications in your inbox from activity on your pictures</div>
+				<div  class="form-group relative"> ​ <label style="color:white;">Notifications : </label>
+  						<select id="option-not" name="notification">
+    						<option value="yes">yes</option>
+    						<option value="no">no</option>
+  						</select>
+  				</div>
 			  <div class="form-group">
 			    <button name="set_reg" type="submit" class="btn btn-success btn-lg btn-block">confirm</button>
 			  </div>
