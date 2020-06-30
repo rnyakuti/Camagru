@@ -52,10 +52,12 @@ session_start();
 			</div>
 			
 		</div>
-		<div class="layout">
-  <div id="newImages"></div>
-  
+		<div class="layout">  
   <div class="row">
+  <div class="center">
+    <button class="btn btn-primary" id="capture-btn">Capture</button>
+    <input type="file" name="file" class="btn btn-primary">
+  </div>
     <div class="cell">
       <video id="player" autoplay></video>
     </div>
@@ -63,9 +65,7 @@ session_start();
       <canvas id="canvas" width="640px" height="480px"></canvas>
     </div>
   </div>
-  <div class="center">
-    <button class="btn btn-primary" id="capture-btn">Capture</button>
-  </div>
+
   <div id="pick-image">
     <label>Video is not supported. Pick an Image instead</label>
     <input type="file" accept="image/*" id="image-picker">
