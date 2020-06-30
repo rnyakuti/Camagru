@@ -37,6 +37,16 @@ try
         email TEXT NOT NULL, password TEXT NOT NULL, verified TEXT NOT NULL, notifications TEXT NOT NULL)";
     $conn->exec($users);
     echo "[INFO]Users Table created successfully <br>";
+
+    $image_uploads = "CREATE TABLE IF NOT EXISTS images (  
+        image_id int(100) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+        user_id INT(100) UNSIGNED NOT NULL,
+        image_name longtext NOT NULL,
+        likes int(200) NOT NULL)
+        ENGINE=InnoDB DEFAULT CHARSET=latin1";
+
+    echo "[INFO]Image_Uploads Table created successfully <br>";
+    $conn->exec($image_uploads);
 }
 catch(PDOException $e)
 {

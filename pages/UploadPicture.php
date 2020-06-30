@@ -50,47 +50,30 @@ session_start();
 				</ul>
 
 			</div>
-
-
+			
 		</div>
-		<div style="display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: center;
-    width: 100%;
-    margin: 0 auto;">
-		<video id="video" width="640" height="480" autoplay></video>
-		<button id="snap">Snap Photo</button>
-		<canvas id="canvas" width="640" height="480"></canvas>
-		</div>
-	</div>
-	
-
-
-<div style="background-color: #FA8072; color: white; text-align: center;margin-bottom:-30px;height:80px; bottom:0;width:100%;" >
-  <p style=" font-size: 15px;padding-top:30px;">rnyakuti &copy; </p>
+		<div class="layout">
+  <div id="newImages"></div>
+  
+  <div class="row">
+    <div class="cell">
+      <video id="player" autoplay></video>
+    </div>
+    <div class="cell"></div>
+      <canvas id="canvas" width="640px" height="480px"></canvas>
+    </div>
+  </div>
+  <div class="center">
+    <button class="btn btn-primary" id="capture-btn">Capture</button>
+  </div>
+  <div id="pick-image">
+    <label>Video is not supported. Pick an Image instead</label>
+    <input type="file" accept="image/*" id="image-picker">
+  </div>
 </div>
-<script>
-var video = document.getElementById('video');
 
-// Get access to the camera!
-if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-    // Not adding `{ audio: true }` since we only want video now
-    navigator.mediaDevices.getUserMedia({ video: true }).then(function(stream) {
-        //video.src = window.URL.createObjectURL(stream);
-        video.srcObject = stream;
-        video.play();
-    });
-}
-var canvas = document.getElementById('canvas');
-var context = canvas.getContext('2d');
-var video = document.getElementById('video');
-
-// Trigger photo take
-document.getElementById("snap").addEventListener("click", function() {
-	context.drawImage(video, 0, 0,640, 480);
-});
-</script>
+<script src="script.js"></script>
+	</div>
 </body>
 </head>
 </html> 
