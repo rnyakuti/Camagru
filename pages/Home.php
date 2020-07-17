@@ -59,78 +59,46 @@ session_start();
  <div class="gallery" style="margin-top:30px">
 
 
-	 <div class="gallery-item" tabindex="0">
-
-		 <img src="https://cdn.pixabay.com/photo/2018/03/17/10/21/dolphin-3233579_1280.jpg?w=152&h=152&fit=crop&crop=faces" class="gallery-image" alt="">
-
-		 <div class="gallery-item-info">
-
-			 <ul>
-				 <li class="gallery-item-likes"><span class="visually-hidden">Likes:</span><i class="fas fa-heart" aria-hidden="true"></i> 56</li>
-				 <li class="gallery-item-comments"><span class="visually-hidden">Comments:</span><i class="fas fa-comment" aria-hidden="true"></i> 2</li>
-			 </ul>
-
-		 </div>
- 		<div class="gallery-item-info">
-
-			 <ul>
-				 <li class="gallery-item-likes"><span class="visually-hidden">Likes:</span><i class="fas fa-heart" aria-hidden="true"></i> 56</li>
-				 <li class="gallery-item-comments"><span class="visually-hidden">Comments:</span><i class="fas fa-comment" aria-hidden="true"></i> 2</li>
-			 </ul>
-
-		 </div>
-
-	 </div>
 	 
+	 <?php
+
+try
+{
+	
+    $servername = "localhost";
+    $dusername = "root";
+    $password = "";
+    $dbname = "Camagru_rnyakuti";
+    $name = "";
+  $conn = new PDO("mysql:host=$servername;dbname=$dbname", $dusername, $password);
+	$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+	$str = "SELECT * FROM images";
+	$res = $conn->query($str);
+	$id = 2;//
+	echo '<div class="container">';
+	while ($new = $res->fetch())
+	{
+		$img = "<img src=\"".$new['image_name']."\" class='gallery-image'>";
+		echo '<div class="gallery-item" tabindex="0">';
+		echo $img;
+		echo '<div class="gallery-item-info">';
+		echo '<ul>';
+		echo '<li class="gallery-item-likes"><span class="visually-hidden">Likes:</span><i class="fas fa-heart" aria-hidden="true"></i>'.$new['likes'];
+		echo '<li class="gallery-item-comments"><span class="visually-hidden">Comments:</span><i class="fas fa-comment" aria-hidden="true"></i> 2</li>';
+		echo ' </ul>';
+		echo '</div>';
+		echo '</div>';	
+	}
+
+}
+catch(PDOException $e)
+	{
+		echo "[INFO] " . $e->getMessage();
+	}
 
 
-	 <div class="gallery-item" tabindex="0">
-
-		 <img src="https://cdn.pixabay.com/photo/2018/03/17/10/21/dolphin-3233579_1280.jpg?w=152&h=152&fit=crop&crop=faces" class="gallery-image" alt="">
-
-		 <div class="gallery-item-info">
-
-			 <ul>
-				 <li class="gallery-item-likes"><span class="visually-hidden">Likes:</span><i class="fas fa-heart" aria-hidden="true"></i> 56</li>
-				 <li class="gallery-item-comments"><span class="visually-hidden">Comments:</span><i class="fas fa-comment" aria-hidden="true"></i> 2</li>
-			 </ul>
-
-		 </div>
- 		<div class="gallery-item-info">
-
-			 <ul>
-				 <li class="gallery-item-likes"><span class="visually-hidden">Likes:</span><i class="fas fa-heart" aria-hidden="true"></i> 56</li>
-				 <li class="gallery-item-comments"><span class="visually-hidden">Comments:</span><i class="fas fa-comment" aria-hidden="true"></i> 2</li>
-			 </ul>
-
-		 </div>
-
-	 </div>
-
-		 <div class="gallery-item" tabindex="0">
-
-		 <img src="https://cdn.pixabay.com/photo/2014/02/24/08/28/huskies-273409_1280.jpg?w=152&h=152&fit=crop&crop=faces" class="gallery-image" alt="">
-
-		 <div class="gallery-item-info">
-
-			 <ul>
-				 <li class="gallery-item-likes"><span class="visually-hidden">Likes:</span><i class="fas fa-heart" aria-hidden="true"></i> 56</li>
-				 <li class="gallery-item-comments"><span class="visually-hidden">Comments:</span><i class="fas fa-comment" aria-hidden="true"></i> 2</li>
-			 </ul>
-
-		 </div>
- 			<div class="gallery-item-info">
-
-			 <ul>
-				 <li class="gallery-item-likes"><span class="visually-hidden">Likes:</span><i class="fas fa-heart" aria-hidden="true"></i> 56</li>
-				 <li class="gallery-item-comments"><span class="visually-hidden">Comments:</span><i class="fas fa-comment" aria-hidden="true"></i> 2</li>
-			 </ul>
-
-		 </div>
-
-	 </div>
-
-
+	 ?>
+</div> 
 </div>
 	</div>
 

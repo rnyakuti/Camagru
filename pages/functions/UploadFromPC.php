@@ -46,39 +46,7 @@ if(isset($_POST['submit'])){
    
   }
   echo "uploaded";
-
-  try
-  {
-    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $dusername, $password);
-      $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-      $str = "SELECT * FROM images";
-      $res = $conn->query($str);
-      $id = 2;//
-      echo '<div class="container">';
-      while ($new = $res->fetch())
-      {
-          
-              $img = "<img src=\"".$new['image_name']."\">";
-              echo '<div class="img-con">';
-              echo $img;
-              echo '<form method="post">
-              <button type="submit" class="btn" name="like">Like</button>
-              </form>';
-              echo "<p>".$new['likes']."</p>";
-              echo '</div>';
-          
-      }
-  }
-  catch(PDOException $e)
-      {
-          echo "[INFO] " . $e->getMessage();
-      }
-
-
-
   $conn = null;
-
-
 ?>
 
 
