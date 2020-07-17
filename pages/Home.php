@@ -57,10 +57,8 @@ session_start();
 		</div>
  
  <div class="gallery" style="margin-top:30px">
-
-
 	 
-	 <?php
+<?php
 
 try
 {
@@ -74,20 +72,23 @@ try
 	$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	$str = "SELECT * FROM images";
 	$res = $conn->query($str);
-	$id = 2;//
+	$user_id =  $_SESSION['id'] ;
 	echo '<div class="container">';
 	while ($new = $res->fetch())
 	{
-		$img = "<img src=\"".$new['image_name']."\" class='gallery-image'>";
-		echo '<div class="gallery-item" tabindex="0">';
-		echo $img;
-		echo '<div class="gallery-item-info">';
-		echo '<ul>';
-		echo '<li class="gallery-item-likes"><span class="visually-hidden">Likes:</span><i class="fas fa-heart" aria-hidden="true"></i>'.$new['likes'];
-		echo '<li class="gallery-item-comments"><span class="visually-hidden">Comments:</span><i class="fas fa-comment" aria-hidden="true"></i> 2</li>';
-		echo ' </ul>';
-		echo '</div>';
-		echo '</div>';	
+		if($new['user_id'] == $user_id )
+		{
+			$img = "<img src=\"".$new['image_name']."\" class='gallery-image'>";
+			echo '<div class="gallery-item" tabindex="0">';
+			echo $img;
+			echo '<div class="gallery-item-info">';
+			echo '<ul>';
+			echo '<li class="gallery-item-likes"><span class="visually-hidden">Likes:</span><i class="fas fa-heart" aria-hidden="true"></i>'.$new['likes'];
+			echo '<li class="gallery-item-comments"><span class="visually-hidden">Comments:</span><i class="fas fa-comment" aria-hidden="true"></i> 2</li>';
+			echo ' </ul>';
+			echo '</div>';
+			echo '</div>';
+		}	
 	}
 
 }
