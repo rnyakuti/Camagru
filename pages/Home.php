@@ -1,6 +1,11 @@
 <?php
-// Start the session
 session_start();
+//if user has logged out but trys to go back to page through browser, this will take them to log in page
+if(!isset( $_SESSION['id']))
+{
+	header("Location: ../index.php");
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en" >
@@ -60,7 +65,9 @@ session_start();
 	 
 <?php
 
-try
+if(isset( $_SESSION['id']))
+{
+	try
 {
 	
     $servername = "localhost";
@@ -96,6 +103,12 @@ catch(PDOException $e)
 	{
 		echo "[INFO] " . $e->getMessage();
 	}
+
+}
+else
+{
+	echo "YOU ARE NOT LOGGED IT, LOGIN OF CHECKOUT THE PUBLIC GALLERY";
+}
 
 
 	 ?>
