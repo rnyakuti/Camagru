@@ -41,16 +41,17 @@
 </div>
 <div class="profile-stats">
   <ul>
-    <li><span class="profile-stat-count">Upload or take a picture and share it with everyone</span> Add a filter to have some fun with the pictures</li>
+    <li><span class="profile-stat-count">Upload or take a picture and share it with everyone</span> <br>Add a filter to have some fun with the pictures</li>
 	</ul>
 </div>
 </div>
 <div class="layout">  
   <div class="row">
   <div class="center">
-  <button type="Submit" class="btn  btn-primary" name="save">Upload</button>
-    <input type="file" name="file" class="btn btn-primary">
-    <a class="btn profile-edit-btn" style="margin-bottom:10px;"  id="snap">Take A Picture</a>
+  <form action="functions\UploadFromPC.php" method="POST" enctype="multipart/form-data">
+    <input type="file" name="file" class="btn profile-edit-btn">
+    <input type="submit" name="submit" class="btn profile-edit-btn" style="margin-bottom:10px;"  value="upload file"/>
+  </form>
   </div>
   <div class="cell">
   <form method="POST">
@@ -58,7 +59,9 @@
     <canvas id="canvas" width="640" height="480"></canvas>
     <input type="hidden" name="image" id="img">
     <canvas id="canvas2" width="640" height="480"></canvas>
-    <button type="Submit" class="btn" name="delete">Reset</button>
+    <button type="Submit" class="btn profile-edit-btn" name="delete">Reset</button>
+    <a class="btn profile-edit-btn" style="margin-bottom:10px;"  id="snap">Take A Picture</a>
+    <button type="Submit" name="upload" class="btn profile-edit-btn" style="margin-bottom:10px;">Upload</a>
   </form>
     </div>
     <div class="cell">
