@@ -47,6 +47,7 @@ try
 		echo '<div class="gallery-item-info">';
 		echo '<ul>';
 		echo '<li class="gallery-item-likes"><span class="visually-hidden">Likes:</span><i class="fas fa-heart" aria-hidden="true"></i>'.$new['likes'];
+		echo '<li class="gallery-item-likes"><span class="visually-hidden">User:</span><i class="fas fa-user" aria-hidden="true"></i>'.functionName($new['user_id']);
 		echo '<li class="gallery-item-comments"><span class="visually-hidden">Comments:</span><i class="fas fa-comment" aria-hidden="true"></i> 2</li>';
 		echo ' </ul>';
 		echo '</div>';
@@ -59,6 +60,39 @@ catch(PDOException $e)
 		echo "[INFO] " . $e->getMessage();
 	}
 
+	
+function functionName($id) {
+	
+
+	
+try
+{
+	$dusername = "root";
+	$password = "";
+	$DB_DSN = "mysql:host=localhost;dbname=Camagru_rnyakuti";
+	$conn = new PDO($DB_DSN, $dusername, $password);
+	$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+	$search = "SELECT username, user_id FROM users";
+    $request  = $conn->query($search);
+    $varbool = 0;
+    while($searching = $request->fetch())
+    {
+        if($searching['user_id'] == $id)
+        {
+			$ret= $searching['username'];
+           return $ret;
+        }
+     }
+}
+
+
+catch(PDOException $e)
+	{
+		echo "[INFO] " . $e->getMessage();
+	}
+
+
+}
 
 	 ?>
 </div>
