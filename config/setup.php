@@ -1,5 +1,5 @@
 <?php
-include("config.php");
+include("database.php");
 
 try 
 {
@@ -20,7 +20,7 @@ try
 }
 catch(PDOException $e)
 {
-    echo "[INFO] Could not create database, details may be incorrect" . $e->getMessage() . "<br>";
+    echo "[INFO] Could not create database, it may exist or user credentials might be incorrect" . $e->getMessage() . "<br>";
 }
 
 /* Creating tables */
@@ -44,6 +44,16 @@ try
 
     echo "[INFO]Image_Uploads Table created successfully <br>";
     $conn->exec($image_uploads);
+
+    $user_comments = "CREATE TABLE IF NOT EXISTS user_comments (
+        id int(100) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+        image_id int(100) NOT NULL,
+        user_id int (100) NOT NULL,
+        date VARCHAR(128) NOT NULL,
+        comment TEXT NOT NULL)";
+    $conn->exec($user_comments);
+    echo "[INFO] user_comments Table created successfully <br>";
+
 }
 catch(PDOException $e)
 {

@@ -91,10 +91,14 @@ if(isset( $_SESSION['id']))
 			echo '<div class="gallery-item-info">';
 			echo '<ul>';
 			echo '<li class="gallery-item-likes"><span class="visually-hidden">Likes:</span><i class="fas fa-heart" aria-hidden="true"></i>'.$new['likes'];
-			echo '<li class="gallery-item-comments"><span class="visually-hidden">Comments:</span><i class="fas fa-comment" aria-hidden="true"></i> 2</li>';
 			echo ' </ul>';
 			echo '</div>';
+			echo '<div style="color: #000000; margin-top: 10px; margin-bottom: 10px; "> comments here </div>';
+			echo '<div style="color: #000000; margin-top: 10px; margin-bottom: 10px; "> comments here </div>';
+			echo '<div style="color: #000000; margin-top: 10px; margin-bottom: 10px; "> comments here </div>';
 			echo '</div>';
+			echo '<a class="btn profile-edit-btn" style="margin-bottom:10px; margin-left:10px; margin-top:10px" href="">Comment</a>';
+			echo '<a class="btn profile-edit-btn" style="margin-bottom:10px; margin-left:10px; margin-top:10px" href="">Like</a>';
 		}	
 	}
 
