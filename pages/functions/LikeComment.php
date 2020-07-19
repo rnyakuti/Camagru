@@ -39,6 +39,7 @@ try
     $str = "SELECT * FROM images";
     $id = $_GET['img'];
     $user = $_GET['user'];
+    $likes = 0;
     echo "<h1 style='font-size: 20px; text-align:center; margin-top: 20px;margin-bottom: 20px;'> Uploaded by ".functionName($user)."</h1>";
     $res = $conn->query($str);
 	while ($new = $res->fetch())
@@ -47,7 +48,9 @@ try
         if($id == $new['image_id'])
         {
             echo $img;
+            $c_likes = $new['likes'];
         }
+        
 		
     }
     echo '<form method="post">';
@@ -56,15 +59,15 @@ try
     echo  "<textarea name='comment' style='float:left; width: 300px; height:100px;'></textarea><br> </div>";
     echo "<button type='submit' name= 'comment_submit' class='btn profile-edit-btn' style='margin-bottom:10px; margin-left:10px; margin-top:10px'>Comment</button>";
     echo '<form/>';
-    echo '<h1 style="font-size: 10px; text-align:right; margin-top: 5px;font-weight: bold;">LIKES : </h1>';
-    echo '<h1 style="font-size: 10px; text-align:right; margin-top: 5px;font-weight: bold;">COMMENTS : </h1>';
-    echo '<h1 style="font-size: 15px; text-align:left; margin-top: 50px;font-weight: bold; color:#FA8072;">Comments</h1>';
+    echo '<h1 style="font-size: 15px; text-align:left; margin-top: 5px;font-weight: bold; color:#FA8072;">';
+    echo  "LIKES : ".$c_likes;
+    echo '</h1>';
+    echo '<h1 style="font-size: 15px; text-align:left; margin-top: 30px;font-weight: bold; color:#FA8072;">Comments</h1>';
+    echo  getComments($id);
     echo '<section style = "margin-bottom:100px;">';
-    echo '<h1 style="font-size: 15px; text-align:left; margin-top: 10px;font-weight: bold;">comment by user</h1>';
-    echo '<p style="font-size: 15px; text-align:left; margin-top: 10px;font-weight: lighter;" > Loreium ipseium the comments on the thing</p>';
     echo '</section>';
 
-    if (isset($_POST['comment_submit']))
+    if (isset($_POST['comment_submit']) && isset( $_SESSION['id']))
     {
         try
         {
@@ -99,8 +102,12 @@ try
             echo "[INFO] " . $e->getMessage();
         }
     }
+    else
+    {
+        echo "<h1 style='font-size: 20px; text-align:center; margin-top: 20px;margin-bottom: 20px;'>LOG IN OR SIGN UP IF YOU WOULD LIKE TO COMMENT ON OR LIKE AN IMAGE</h1>";
+    }
 
-    if (isset($_POST['like']))
+    if (isset($_POST['like']) && isset( $_SESSION['id']) )
     {
         try
         {
@@ -124,6 +131,10 @@ try
         {
             echo "[INFO] " . $e->getMessage();
         }
+    }
+    else
+    {
+        echo "<h1 style='font-size: 20px; text-align:center; margin-top: 20px;margin-bottom: 20px;'>LOG IN OR SIGN UP IF YOU WOULD LIKE TO COMMENT ON OR LIKE AN IMAGE</h1>";
     }
     
 
@@ -155,12 +166,33 @@ try
      }
 }
 
-
 catch(PDOException $e)
 	{
 		echo "[INFO] " . $e->getMessage();
-	}
+    }
+}
 
+function getComments($image_id)
+{
+   
+    $servername = "localhost";
+    $dusername = "root";
+    $password = "";
+    $dbname = "Camagru_rnyakuti";
+    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $dusername, $password);
+	$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+	$str = "SELECT * FROM user_comments";
+	$res = $conn->query($str);
+	while ($new = $res->fetch())
+	{
+		if($new['image_id'] == $image_id )
+		{
+            echo '<section style = "margin-bottom:40px;">';
+            echo '<h1 style="font-size: 15px; text-align:left; margin-top: 10px;font-weight: bold;">comment by '.functionName($new["user_id"]).'</h1>';
+            echo '<p style="font-size: 15px; text-align:left; margin-top: 10px;font-weight: lighter;" >'. $new["comment"].'</p>';
+            echo '</section>';
+		}	
+	}
 
 }
 
