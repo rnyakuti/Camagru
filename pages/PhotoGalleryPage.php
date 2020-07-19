@@ -16,6 +16,7 @@
     <a href="../index.php" style=" font-size:1.2em">LOGIN</a>
 	<a href="Home.php" style=" font-size:1.2em">MY PROFILE</a>
     <a href="signUpPage.php" style=" font-size:1.2em">SIGNUP</a>
+	<a href="functions/logOut.php" style=" font-size:1.2em">LOGOUT</a>
   </div>
 </div>
 <h1 style="font-size: 20px; text-align:center; margin-top: 20px">PHOTO GALLERY</h1>
@@ -48,7 +49,6 @@ try
 		echo '<ul>';
 		echo '<li class="gallery-item-likes"><span class="visually-hidden">Likes:</span><i class="fas fa-heart" aria-hidden="true"></i>'.$new['likes'];
 		echo '<li class="gallery-item-likes"><span class="visually-hidden">User:</span><i class="fas fa-user" aria-hidden="true"></i>'.functionName($new['user_id']);
-		echo '<li class="gallery-item-comments"><span class="visually-hidden">Comments:</span><i class="fas fa-comment" aria-hidden="true"></i> 2</li>';
 		echo ' </ul>';
 		echo '</div>';
 		echo '</div>';	

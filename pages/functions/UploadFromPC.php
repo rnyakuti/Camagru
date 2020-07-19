@@ -49,7 +49,7 @@ if(isset($_POST['submit'])){
     }
    
   }
-  echo "uploaded";
+  echo "failed";
   $conn = null;
 ?>
 

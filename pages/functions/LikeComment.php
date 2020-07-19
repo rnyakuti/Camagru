@@ -18,6 +18,7 @@ session_start();
     <a href="../../index.php" style=" font-size:1.2em">LOGIN</a>
 	<a href="../Home.php" style=" font-size:1.2em">MY PROFILE</a>
     <a href="../signUpPage.php" style=" font-size:1.2em">SIGNUP</a>
+    <a href="LogOut.php" style=" font-size:1.2em">LOGOUT</a>
   </div>
 </div>
     <div class="container" style="min-height: 100vh;">
