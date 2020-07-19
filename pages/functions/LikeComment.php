@@ -99,6 +99,32 @@ try
             echo "[INFO] " . $e->getMessage();
         }
     }
+
+    if (isset($_POST['like']))
+    {
+        try
+        {
+
+            $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            $str = "SELECT * FROM images";
+            $res = $conn->query($str);
+            $likes= 0;
+            while ($new = $res->fetch())
+            {
+                if ($id == $new['image_id'])
+                {
+                    $likes = $new['likes'];
+                }
+            }
+            $likes++;
+            $qry = "UPDATE images SET likes=$likes WHERE image_id=$id";
+            $conn->exec($qry);
+        }
+        catch(PDOException $e)
+        {
+            echo "[INFO] " . $e->getMessage();
+        }
+    }
     
 
 }
