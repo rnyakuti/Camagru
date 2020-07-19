@@ -15,9 +15,9 @@ session_start();
         <p style="margin: -16px 0 -3px; font-size:23px; ">camagru</p>
 			</div></a>
   <div class="header-right">
-    <a href="../index.php" style=" font-size:1.2em">LOGIN</a>
-	
-    <a href="signUpPage.php" style=" font-size:1.2em">SIGNUP</a>
+    <a href="../../index.php" style=" font-size:1.2em">LOGIN</a>
+	<a href="../Home.php" style=" font-size:1.2em">MY PROFILE</a>
+    <a href="../signUpPage.php" style=" font-size:1.2em">SIGNUP</a>
   </div>
 </div>
     <div class="container" style="min-height: 100vh;">
@@ -102,10 +102,6 @@ try
             echo "[INFO] " . $e->getMessage();
         }
     }
-    else
-    {
-        echo "<h1 style='font-size: 20px; text-align:center; margin-top: 20px;margin-bottom: 20px;'>LOG IN OR SIGN UP IF YOU WOULD LIKE TO COMMENT ON OR LIKE AN IMAGE</h1>";
-    }
 
     if (isset($_POST['like']) && isset( $_SESSION['id']) )
     {
@@ -132,10 +128,7 @@ try
             echo "[INFO] " . $e->getMessage();
         }
     }
-    else
-    {
-        echo "<h1 style='font-size: 20px; text-align:center; margin-top: 20px;margin-bottom: 20px;'>LOG IN OR SIGN UP IF YOU WOULD LIKE TO COMMENT ON OR LIKE AN IMAGE</h1>";
-    }
+    
     
 
 }

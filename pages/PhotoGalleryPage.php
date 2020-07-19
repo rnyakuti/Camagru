@@ -14,7 +14,7 @@
 			</div></a>
   <div class="header-right">
     <a href="../index.php" style=" font-size:1.2em">LOGIN</a>
-	
+	<a href="Home.php" style=" font-size:1.2em">MY PROFILE</a>
     <a href="signUpPage.php" style=" font-size:1.2em">SIGNUP</a>
   </div>
 </div>
