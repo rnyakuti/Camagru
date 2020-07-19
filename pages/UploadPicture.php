@@ -186,3 +186,32 @@ function showSlides(n) {
   </script>
 </body>
 </html>
+
+<?php
+ if (isset($_POST['upload']))
+ {
+   if(isset($_POST['image']))
+   {
+      $img = $_POST['image'];
+      $servername = "localhost";
+      $dusername = "root";
+      $password = "";
+      $dbname = "Camagru_rnyakuti";
+      $id = $_SESSION['id'];
+      try
+      {
+        $conn = new PDO("mysql:host=$servername;dbname=$dbname", $dusername, $password);
+        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $str = "INSERT INTO images (user_id, image_name, likes) VALUES ('$id', '$img', 0)";
+        $conn->exec($str);
+        echo "photo taken, view it in the gallery";
+      }
+      catch(PDOException $e)
+      {
+        echo "[INFO] " . $e->getMessage();
+      }
+   }
+  
+ }
+
+?>
