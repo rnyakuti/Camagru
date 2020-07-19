@@ -52,9 +52,9 @@ if(!isset( $_SESSION['id']))
 			<div class="profile-stats">
 
 				<ul>
-					<li><span class="profile-stat-count">164</span> Uploads</li>
-					<li><span class="profile-stat-count">188</span> Likes</li>
-					<li><span class="profile-stat-count">206</span> comments</li>
+					<li><span class="profile-stat-count">42</span> Uploads</li>
+					<li><span class="profile-stat-count">42</span> Likes</li>
+					<li><span class="profile-stat-count">42</span> comments</li>
 				</ul>
 
 			</div>
