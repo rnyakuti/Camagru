@@ -86,19 +86,18 @@ if(isset( $_SESSION['id']))
 		if($new['user_id'] == $user_id )
 		{
 			$img = "<img src=\"".$new['image_name']."\" class='gallery-image'>";
+			$image_url = 'functions\LikeComment.php?img='.$new["image_id"].'&user='.$new['user_id'];
 			echo '<div class="gallery-item" tabindex="0">';
 			echo $img;
 			echo '<div class="gallery-item-info">';
 			echo '<ul>';
 			echo '<li class="gallery-item-likes"><span class="visually-hidden">Likes:</span><i class="fas fa-heart" aria-hidden="true"></i>'.$new['likes'];
+			echo '<li class="gallery-item-comments"><span class="visually-hidden">Comments:</span><i class="fas fa-comment" aria-hidden="true"></i> 2</li>';
 			echo ' </ul>';
 			echo '</div>';
-			echo '<div style="color: #000000; margin-top: 10px; margin-bottom: 10px; "> comments here </div>';
-			echo '<div style="color: #000000; margin-top: 10px; margin-bottom: 10px; "> comments here </div>';
-			echo '<div style="color: #000000; margin-top: 10px; margin-bottom: 10px; "> comments here </div>';
 			echo '</div>';
-			echo '<a class="btn profile-edit-btn" style="margin-bottom:10px; margin-left:10px; margin-top:10px" href="">Comment</a>';
-			echo '<a class="btn profile-edit-btn" style="margin-bottom:10px; margin-left:10px; margin-top:10px" href="">Like</a>';
+			echo "<a class='btn profile-edit-btn' style='margin-bottom:10px; margin-left:10px; margin-top:10px' href=$image_url>Like and Comment</a>";
+			echo "<a class='btn profile-edit-btn' style='margin-bottom:10px; margin-left:10px; margin-top:10px' href=$image_url>View Photo</a>";
 		}	
 	}
 
