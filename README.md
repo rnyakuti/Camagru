@@ -62,33 +62,34 @@ Camagru is an image sharing and editing website that is similar to instagram
    
    ### Source Code Folder Structure ###
    
-   *README.md                - read me file with documentation
+     *README.md                - read me file with documentation
    
-   *SetNewPassword.php       - setting of new password for user upon request functionality and page layout
+     *SetNewPassword.php       - setting of new password for user upon request functionality and page layout
    
-   *author                   - author file containing student username
+     *author                   - author file containing student username
    
-   *camagru.en.pdf           - a pdf file containing the project brief and requirements
+     *camagru.en.pdf           - a pdf file containing the project brief and requirements
    
-   *camagru.markingsheet.pdf - a pdf file containing the project test and expected results
+     *camagru.markingsheet.pdf - a pdf file containing the project test and expected results
    
-   *index.php                -  contains code for the landing page for camagru which is the sign in page
+     *index.php                -  contains code for the landing page for camagru which is the sign in page
    
-   *userverification.php     - contains code for verification of user functionality
+     *userverification.php     - contains code for verification of user functionality
    
-   *validate_login.php       - validate user login functionality
+     *validate_login.php       - validate user login functionality
    
-   **config**
-       *database.php
-       *setup.php
+     **config**
+         *database.php
+         
+         *setup.php
        
-   **images**
-       *---This folder contains all the icon images used for the front end design---
+     **images**
+          *---This folder contains all the icon images used for the front end design---
        
-   **pages**
-        **Stickers**
-            *---This folder contains all the icon images used for stickers that will be superimposed onto images from the webcam---
-        **functions**
+      **pages**
+         **Stickers**
+              *---This folder contains all the icon images used for stickers that will be superimposed onto images from the webcam---
+         **functions**
            *DeleteImage.php    - contains the code for deleting images from the database
            *LikeComment.php    - contains the code that allows for liking images and commenting on images on the website
            *LogOut.php         - contains the code for the logging out functionality
@@ -96,12 +97,12 @@ Camagru is an image sharing and editing website that is similar to instagram
            *ResetPassword.php  - contains the code for requesting a new password functionality
            *UpdateDetails.php  - contains the code for the updating user details functionality 
            *UploadFromPC.php   - contains the code for uploading images from the user's machine functionality
-       *Home.php               - contains the code for the user's profile page
-       *PhotoGalleryPage.php   - contains the code for public photo gallery functionality 
-       *Settings.php           - contains the code for the settings page layout
-       *UploadPicture.php      - contains the code for the upload from webcam functionality, the sticker superimpose functionality
-       *forgotPasswordPage.php - contains the code for the forgot password page layout
-       *signUpPage.php         - contains the code for the register form layout
+        *Home.php               - contains the code for the user's profile page
+        *PhotoGalleryPage.php   - contains the code for public photo gallery functionality 
+        *Settings.php           - contains the code for the settings page layout
+        *UploadPicture.php      - contains the code for the upload from webcam functionality, the sticker superimpose functionality
+        *forgotPasswordPage.php - contains the code for the forgot password page layout
+        *signUpPage.php         - contains the code for the register form layout
        
   
 ## Testing ##
