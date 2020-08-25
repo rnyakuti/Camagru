@@ -63,13 +63,21 @@ Camagru is an image sharing and editing website that is similar to instagram
    ### Source Code Folder Structure ###
    
    *README.md                - read me file with documentation
+   
    *SetNewPassword.php       - setting of new password for user upon request functionality and page layout
+   
    *author                   - author file containing student username
+   
    *camagru.en.pdf           - a pdf file containing the project brief and requirements
+   
    *camagru.markingsheet.pdf - a pdf file containing the project test and expected results
+   
    *index.php                -  contains code for the landing page for camagru which is the sign in page
-   *userverification.php     - contains code for verification of user functionality 
+   
+   *userverification.php     - contains code for verification of user functionality
+   
    *validate_login.php       - validate user login functionality
+   
    **config**
        *database.php
        *setup.php
