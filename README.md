@@ -1,5 +1,5 @@
 # Camagru
-# 42 Project
+### 42 Project
 Camagru is an image sharing and editing website that is similar to instagram
 
 # Requirements
@@ -14,7 +14,7 @@ Camagru is an image sharing and editing website that is similar to instagram
     by copying the link and cloning it to a path on your machine**
     
 #     Database and Web Server Setup and Configuration 
-    `code()` * Download XAMPP ( or a webserver of your choice) from the apachefriends.org website, a link is provided in the requirements
+      * Download XAMPP ( or a webserver of your choice) from the apachefriends.org website, a link is provided in the requirements
     
 
 1. Place folder into server folder, if you are using XAMPP place into htdoc
