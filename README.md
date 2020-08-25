@@ -1,19 +1,19 @@
 # Camagru
-### 42 Project
+### 42 Project ###
 Camagru is an image sharing and editing website that is similar to instagram
 
-# Requirements
-1. PHP
-2.Javascript
+## Requirements ##
+1.  PHP
+2. Javascript
 3. XAMPP [https://www.apachefriends.org/download.html] **note that you can use any other web server of your choice** 
 
-# Project Installation 
+## Project Installation ## 
 
   **How To Download Sorce Code**
     Visit [https://github.com/rnyakuti/Camagru] and click on the code button and select either **Open with GitHub Desktop** or **Download the Zip** or **Clone with HTTPS
     by copying the link and cloning it to a path on your machine**
     
-#     Database and Web Server Setup and Configuration 
+##    Database and Web Server Setup and Configuration ##
       * Download XAMPP ( or a webserver of your choice) from the apachefriends.org website, a link is provided in the requirements
     
 
