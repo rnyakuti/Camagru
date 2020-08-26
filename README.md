@@ -42,7 +42,7 @@ Camagru is an image sharing and editing website that is similar to instagram
 ## How To Run Program ##
 
     * In your browser URL type in the path to the source code in the following format 
-       http://localhost:{port number}/camagru{or whatever you named the source code folder
+       http://localhost:{port number}/camagru{or whatever you named the source code folder}
        
      * This will lead you to the home page of the website and you can begin using it
 
@@ -106,3 +106,104 @@ Camagru is an image sharing and editing website that is similar to instagram
        
   
 ## Testing ##
+
+The following tests and expected results outlined are based on the Camagru marking sheet from the following marksheet that can be found in the root directory of
+this repository [https://github.com/rnyakuti/Camagru/blob/master/camagru.markingsheet.pdf]
+
+### Test That Are Run ###
+
+**Preliminary Check**
+- This application is develloped in PHP
+- It uses no framework, micro-framework or external libraries.
+- It does not need any package manager like "npm" or "composer"
+- The following files are present and correctly configured
+* index.php
+* config/database.php
+* config/setup.php
+- Start the webserver that should serve the app. The server must produce no
+  errors. You can go to the served address without any errors 
+  {http://localhost:{port number}/camagru{or whatever you named the source code folder}
+
+**User Creation**
+- This application has a registration form if the user wants to create a
+  new account. An user have to fullfill it with :
+     - a username
+     - a secure password ( a simple word in lowercase must be refused by the app )
+     - a email address.
+- The form have validators on inputs and server-side to make sure the correct
+  data are well transmitted. At the end of the registration, it should be
+  completed with the sending of a account confirmation mail, that 
+  contains a unique link.
+- The user can't connect until they confirm it via this unique link.
+
+**User authentification**
+- The user can connect with their credentials, once its a confirmed account.
+- The user can reset their password by clicking on the forgot password, by 
+  receiving a password reinitialisation email.
+- There's always a way to logout when the user is connected.
+
+**Image sharing and editing**
+- Once logged in, a user can go to the editing view.
+- The editing view, will contains:
+   - A webcam preview
+   - A list of the previous edited pictures as thumbnails
+   - A way to save the final edited picture
+   - A list of 'stickers'
+   - A way to upload a base image instead of the webcam
+   - You can save and upload a photo only if a base media is loaded ( webcam or
+     uploaded image ).
+   - You can upload an image with no stickers, one sticker or some stickers
+     (all the cases must be handled )
+   - The image editing pipeline must be started server-side
+
+**Photo Gallery** 
+- There's a public gallery view in the app, that can be accessible with
+  and without authentification.
+- The gallery displays all of the images took by app users, ordered by
+  date of creation.
+- The images are displayed in infinite scroll.
+- Every pictures is like-able and commentable if the user is logged in.
+- For each comment, the user must receive a notification mail, only if
+  the user preference for email notification is true otherwise no email is sent
+  
+**User Settings**
+- Once logged in, a user can modify with no errors :
+  - their username
+  - their password
+  - their mail address
+  - the notification email preference
+- Every modification made on those fields should have repercussions on
+  the user's data and authentification. Upon clicking the update button
+  the values changed and updated in the database and the user is
+  logged out and the user has to log in again with new details if they
+  changed their username and/or password.
+  
+**User Rights**
+- A user can delete their own uploaded images but not the other user's imges.
+- The editing view is only accessible if the user is correctly logged in.
+- Trying to reach the view anonymously redirects you to the login view.
+- Gallery is public, but only a logged user can like and comment on images.
+
+**UI and UX**
+- The app must be compatible on Firefox( >= 41 ) and Chrome ( >= 46 ). All
+  features aboves must work, without any warning, error or log ( except as
+  always for getUserMedia ).
+- When you set the app on mobile mode ( you can do it on Chrome ), elements
+  must not overlap each other and have a correct layout.
+ 
+**Security**
+- Deepdive into the database either in command-line, or with something like
+  PHPMyAdmin or Adminer.
+- Check the Users table and verify the password is crypted.
+- Check for XSS by going on a form containing inputs that generates displayable HTML
+  (like the comments) add this and submit :
+   ` <script type='text/javascript'>alert('THE GAME');</script> `
+  On reload, no alertbox should appear
+- Check for SQL injections by logging out, once logged out, 
+  try to log in with this as a password ( without braces ):
+  `[ blahblah' OR 1='1 ] `
+  If you can authentify, this app is not protected against SQL injections.
+  This part is count as false and you go to the next part.
+  
+**Webcam**
+-A live preview of the webcam 
