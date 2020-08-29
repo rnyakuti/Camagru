@@ -38,6 +38,9 @@ Camagru is an image sharing and editing website that is similar to instagram
         
       * For troubleshooting with the username and password, check out the following link 
         [https://stackoverflow.com/questions/17759776/how-to-get-login-option-for-phpmyadmin-in-xampp/17760139]
+        
+      *You will need to send out emails to your users, here is a helpful guide on how to set it up 
+       [https://www.geeksforgeeks.org/how-to-configure-xampp-to-send-mail-from-localhost-using-php/]
 
 ## How To Run Program ##
 
